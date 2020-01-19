@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-waiting-one-zero-terminated-on-failure
+spec:
+  containers:
+    - name: zero-terminated
+      image: busybox
+      command: ["sh","-c","exit 0"]
+    - name: waiting
+      image: nginx2019:201
+  restartPolicy: OnFailure

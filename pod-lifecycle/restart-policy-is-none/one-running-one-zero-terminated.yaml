@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-running-one-zero-terminated-never
+spec:
+  containers:
+    - name: running
+      image: nginx
+    - name: zero-terminated
+      image: busybox
+      command: ["sh","-c","exit 0"]
+  restartPolicy: Never

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-running-one-waiting-always
+spec:
+  containers:
+    - name: running
+      image: nginx
+    - name: waiting
+      image: nginx2019:201
+  restartPolicy: Always

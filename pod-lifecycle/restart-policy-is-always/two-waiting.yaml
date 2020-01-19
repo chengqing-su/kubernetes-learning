@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-waiting-always
+spec:
+  containers:
+    - name: waiting-1
+      image: nginx2019:201
+    - name: waiting-2
+      image: nginx2019:201
+  restartPolicy: Always

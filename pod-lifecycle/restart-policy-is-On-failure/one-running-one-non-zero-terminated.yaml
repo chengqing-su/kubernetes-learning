@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-running-one-non-zero-terminated-on-failure
+spec:
+  containers:
+    - name: running
+      image: nginx
+    - name: non-zero-terminated
+      image: busybox
+      command: ["sh","-c","exit 1"]
+  restartPolicy: OnFailure

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-running-never
+spec:
+  containers:
+    - name: running-1
+      image: nginx
+    - name: running-2
+      image: nginx
+  restartPolicy: Never

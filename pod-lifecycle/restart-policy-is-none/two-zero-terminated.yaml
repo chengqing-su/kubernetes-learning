@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-zero-terminated-never
+spec:
+  containers:
+    - name: zero-terminated-1
+      image: busybox
+      command: ["sh","-c","exit 0"]
+    - name: zero-terminated-2
+      image: busybox
+      command: ["sh","-c","exit 0"]
+  restartPolicy: Never
