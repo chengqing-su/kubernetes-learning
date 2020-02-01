@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-probe-success-on-failure
+  labels:
+    app: nginx-success
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      livenessProbe:
+        exec:
+          command: ["sh","-c","echo success!"]
+  restartPolicy: OnFailure

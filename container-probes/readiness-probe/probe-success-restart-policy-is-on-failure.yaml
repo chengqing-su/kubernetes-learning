@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-probe-success-on-failure
+  labels:
+    app: nginx-readiness-probe-success
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      readinessProbe:
+        httpGet:
+          port: 80
+  restartPolicy: OnFailure

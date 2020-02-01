@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-probe-failure-never
+  labels:
+    app: nginx-failure
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      livenessProbe:
+        exec:
+          command: ["sh","-c","echo failed! && exit 1"]
+  restartPolicy: Never
